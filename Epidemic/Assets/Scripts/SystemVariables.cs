@@ -3,8 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class SystemVariables {
-    public static string id;
-    public static List<string> usernames = new List<string>();
+    public static PlayerInfo player1 = new PlayerInfo();
+    public static PlayerInfo player2 = new PlayerInfo();
+    public static Difficulty difficulty = Difficulty.Easy;
+}
+
+public class PlayerInfo {
+    public string name;
+}
+
+public enum Difficulty {
+    Easy, Normal
 }
 
 public static class Init {

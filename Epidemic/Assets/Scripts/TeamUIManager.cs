@@ -31,7 +31,7 @@ public class TeamUIManager : MonoBehaviour {
             IDErrorMessage.SetActive(true);
         }
         else {
-            SystemVariables.usernames.Add(IDInput.text);
+            //SystemVariables.usernames.Add(IDInput.text);
             InputIDPanel.SetActive(false);
             UMA_Player.SetActive(true);
             start = true;
