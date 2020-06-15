@@ -14,6 +14,8 @@ public class PlayerMovementScript : MonoBehaviour {
 	[Tooltip("Position of the camera inside the player")]
 	[HideInInspector]public Vector3 cameraPosition;
 
+    public Animator moveAni;
+
 	/*
 	 * Getting the Players rigidbody component.
 	 * And grabbing the mainCamera from Players child transform.
@@ -25,6 +27,10 @@ public class PlayerMovementScript : MonoBehaviour {
 		ignoreLayer = 1 << LayerMask.NameToLayer ("Player");
 
 	}
+
+    void Start() {
+        moveAni = transform.GetChild(2).GetComponent<Animator>();
+    }
 	private Vector3 slowdownV;
 	private Vector2 horizontalMovement;
 	/*
@@ -125,9 +131,11 @@ public class PlayerMovementScript : MonoBehaviour {
 							_runSound.Play ();
 						}
 					}
+                    moveAni.SetTrigger("Run");
 				} else {
 					_walkSound.Stop ();
 					_runSound.Stop ();
+                    moveAni.SetTrigger("Idle");
 				}
 			} else {
 				_walkSound.Stop ();

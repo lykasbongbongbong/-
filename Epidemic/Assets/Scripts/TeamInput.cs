@@ -61,14 +61,16 @@ public class TeamInput : MonoBehaviour {
         if(!readyText.enabled) {
             if (playerNum == 1) {
                 SystemVariables.player1.name = inputName;
+                SystemVariables.player1.playerTypeIndex = characterIndex;
             }
             else {
                 SystemVariables.player2.name = inputName;
+                SystemVariables.player2.playerTypeIndex = characterIndex;
             }
             readyText.enabled = true;
 
             if (anotherReadyText.enabled) {
-                //SceneManager.LoadScene("Game");
+                SceneManager.LoadScene("_scene");
                 Debug.Log("Change Scene");
             }
         }

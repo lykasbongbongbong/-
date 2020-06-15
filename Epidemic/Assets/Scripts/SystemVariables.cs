@@ -10,6 +10,7 @@ public static class SystemVariables {
 
 public class PlayerInfo {
     public string name;
+    public int playerTypeIndex;
 }
 
 public enum Difficulty {
